@@ -64,6 +64,7 @@ import com.sosauce.cutecalc.logic.getButtonVibrationSetting
 import com.sosauce.cutecalc.ui.theme.GlobalFont
 import kotlinx.coroutines.flow.Flow
 
+@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint(
     "UnusedMaterialScaffoldPaddingParameter", "UnusedMaterial3ScaffoldPaddingParameter",
     "AutoboxingStateCreation"
@@ -86,7 +87,7 @@ fun CalculatorUI(
             val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             val vibrationEffect: VibrationEffect =
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE)
+                    VibrationEffect.createOneShot(100, 90)
                 } else {
                     TODO("VERSION.SDK_INT < O")
                 }
